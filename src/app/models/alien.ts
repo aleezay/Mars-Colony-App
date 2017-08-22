@@ -4,5 +4,4 @@ export interface Alien {
   type:string;
   submitted_by: string;
   description: string;
-
 }
