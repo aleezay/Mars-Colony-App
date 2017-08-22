@@ -1,16 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import {JobService } from '../../services/job';
+import {ColonistService } from '../../services/colonist';
+import {JobService } from '../../services/job'; 
 
 @Component({
-  selector: 'app-',
+  selector: 'app-register',
   templateUrl: './register.component.html',
-  styles: []
+  styles: [],
+   providers: [
+    JobService,
+    ColonistService
+  ]
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(jobService: JobService) { }
+//  public: jobs;
 
-  ngOnInit() {
-  }
+  constructor(
+     private jobService: JobService,
+     private colonistService: ColonistService
+     ) { }
+  
 
+  async ngOnInit() {
+    const data = {
+       name: 'bob',
+       age: '50',
+       job_id: '2'
+      }
+      
+  const newColonist = await this.colonistService.registerColonist(data);
+  console.log(newColonist);
+
+  const jobs = await this.jobService.getJobs();
+  console.log(jobs);
+}
 }
