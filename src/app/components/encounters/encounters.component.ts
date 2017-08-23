@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { EncountersService } from '../../services/encounters';
+import { ReportService } from '../../services/encounters';
 
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
   styles: [],
   providers: [
-    EncountersService
+    ReportService
   ]
 })
 export class EncountersComponent implements OnInit {
 
-  constructor(private encountersService: EncountersService) { }
+  constructor(private reportService: ReportService) { }
 
   async ngOnInit(){
-  const encounters = await this.encountersService.getReports();
-  console.log(encounters);
-
-//     const data = {
+//      const data = {
   
-//    name: 'ping',
+//   name: 'ping',
 //   atype: 'peach',
 //   date: '22/08/2017',
 //   action: 'eat',
 //   colonist_id: '4'
 // }
-//   const newEncounter = await this.encounterService.postEncounters(data);
-//   console.log(newEncounter);
+
+  const encounters = await this.reportService.getEncounters();
+  console.log(encounters);
   }
 }
