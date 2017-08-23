@@ -1,15 +1,11 @@
-<!--<p>register works!</p>-->
-<form>
-    <fieldset>
-        <input type="text" placeholder="Name" required>
-        <input type="number" placeholder="Age" required>
-        <div class="custom-select">
-            <select required>
-                <option value="(none)">Select an Occupation</option>
-            </select>
-        </div>
-    </fieldset>
-    <fieldset>
-            <button type="submit">Submit</button>
-    </fieldset>
+<div class="page">
+    <form [formGroup]="registerForm" novalidate>
+     <input type="text" placeholder="Name" formControlName="name" />
+     <input type="number" placeholder="Age" formControlName="age" />
+     <select formControlName="job_id">
+        <option value="none">Select a Job</option>
+        <option *ngFor="let job of jobs" value="{{ job.id }}">{{job.name}}</option>
+   </select>
 </form>
+{{ registerForm.value | json }}
+</div>
