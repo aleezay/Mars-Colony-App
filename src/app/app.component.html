@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<nav>
+  <a routerLink= "/">Welcome</a>
+  <a routerLink= "./register">Register</a>
+  <a routerLink= "./encounters">Encounters</a>
+  <a routerLink= "./report">Report</a>
+</nav>
+
+<!--the square brackets [] indicate binding. 
+Angular will take from the get statte function and pass it into the router we defined
+name routertransition will bind to the dynamic value -->
+<div [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet" ></router-outlet>
+</div>

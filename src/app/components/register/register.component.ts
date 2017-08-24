@@ -19,16 +19,8 @@ export class RegisterComponent implements OnInit {
   jobs: Job[] = [];
 
 registerForm = new FormGroup({
-         name: new FormControl('', 
-         [Validators.required,
-         Validators.maxLength(100),
-         Validators.minLength(2),
-         this.noNumbers('')
-         ]),
-          age: new FormControl('', [Validators.required,
-          Validators.max(9999),
-          Validators.min(0),
-          ]),
+         name: new FormControl('', [Validators.required, Validators.maxLength(100), Validators.minLength(2), this.noNumbers(/[0-9]/)]),
+          age: new FormControl('', [Validators.required, Validators.max(9999), Validators.min(0)]),
        job_id: new FormControl('', [Validators.required])
 });
   
@@ -59,6 +51,4 @@ const forbiddenName = validNameRegex.test(control.value);
 return forbiddenName ? { 'forbiddenName' : { value: control.value } } : null;
    };
  }
-
 }
-//rejex that returns true if it finds numbers in a string
