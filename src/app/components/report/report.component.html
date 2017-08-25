@@ -1,3 +1,18 @@
-<p>
-  report works!
-</p>
+ <div class="form-group">
+ <select formControlName="alien_id">
+        <option value="">Select an Alien</option>
+        <option *ngFor="let alien of aliens" value="{{ alien.id }}">{{alien.type}}</option>
+   </select>
+</div>
+
+<!--<form action="/action_page.php" id="usrform">
+  Name: <input type="text" name="usrname">
+  <input type="submit">
+</form>-->
+<!--<div class=""></div>-->
+<textarea name="comment" form="usrform">What happened? What did the aliens do to you?</textarea>
+
+<div class="submit-report-link">
+<a routerLink="/encounters"><button type="button">Report Encounter</button></a>
+  
+</div>

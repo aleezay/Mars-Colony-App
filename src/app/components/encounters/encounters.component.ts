@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from '../../services/encounters';
+import { Report } from '../../models/report';
 
 @Component({
   selector: 'app-encounters',
@@ -11,19 +12,11 @@ import { ReportService } from '../../services/encounters';
 })
 export class EncountersComponent implements OnInit {
 
+reports: Report[] = []
+
   constructor(private reportService: ReportService) { }
 
   async ngOnInit(){
-//      const data = {
-  
-//   name: 'ping',
-//   atype: 'peach',
-//   date: '22/08/2017',
-//   action: 'eat',
-//   colonist_id: '4'
-// }
-
-  const encounters = await this.reportService.getEncounters();
-  console.log(encounters);
+  this.reports = await this.reportService.getEncounters();
   }
 }

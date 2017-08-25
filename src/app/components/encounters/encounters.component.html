@@ -1,3 +1,16 @@
-<p>
-  encounters works!
-</p>
+<div class="container">
+<h2>Report Encounter</h2>
+<ul class="encounters-list">
+  <li *ngFor="let report of reports">
+    {{report.atype}}
+    {{report.date}}
+    {{report.action}}
+    </li>
+  </ul>
+
+<div class="report-encounter-link">
+<a routerLink="/report"><button type="button">Report Encounter</button></a>
+</div>
+
+
+</div>
