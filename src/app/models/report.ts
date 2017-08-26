@@ -7,7 +7,6 @@ export interface Report {
 }
 
 export interface NewReport {
-  name: string;
   atype: string;
   date: string;
   action: string;

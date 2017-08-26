@@ -18,7 +18,7 @@ getEncounters(): Promise<Report[]>{
                .catch(this.handleError);
     }
 
-postEncounters(encounter, NewEncounter): Promise<Report[]>{
+postEncounters(encounter: NewReport): Promise<Report[]>{
      const headers = new Headers({'Content-Type': 'application/json'});
      const body = JSON.stringify({ encounter });
 

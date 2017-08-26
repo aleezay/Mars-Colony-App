@@ -1,18 +1,13 @@
- <div class="form-group">
- <select formControlName="alien_id">
+<div class="page">
+  <form [formGroup]="reportForm" novalidate (submit)="submitReport()">
+    <select formControlName="alien_id">
         <option value="">Select an Alien</option>
-        <option *ngFor="let alien of aliens" value="{{ alien.id }}">{{alien.type}}</option>
+        <option *ngFor="let alien of aliens" value="{{ alien.type }}">{{alien.type}}</option>
    </select>
-</div>
+    <textarea formControlName="action">What happened? What did the aliens do to you?</textarea>
 
-<!--<form action="/action_page.php" id="usrform">
-  Name: <input type="text" name="usrname">
-  <input type="submit">
-</form>-->
-<!--<div class=""></div>-->
-<textarea name="comment" form="usrform">What happened? What did the aliens do to you?</textarea>
-
-<div class="submit-report-link">
-<a routerLink="/encounters"><button type="button">Report Encounter</button></a>
-  
+    <button type="submit">Report Encounter</button>
+    
+<!--routerLink="/encounters"-->
+  </form>
 </div>
