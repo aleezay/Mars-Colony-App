@@ -1,16 +1,19 @@
-<div class="container">
-<h2>Report Encounter</h2>
-<ul class="encounters-list">
-  <li *ngFor="let report of reports">
-    {{report.atype}}
-    {{report.date}}
-    {{report.action}}
+<div class="encounters-page">
+  <div class="encounters-title">
+    <h2>Recent Encounters</h2>
+  </div>
+  <div class="encounters-container">
+  <ul class="encounters-list">
+    <li class="encounters-li" *ngFor="let report of reports">
+      {{report.atype}} {{report.date}} {{report.action}}
     </li>
   </ul>
-
-<div class="report-encounter-link">
-<a routerLink="/report"><button type="button">Report Encounter</button></a>
-</div>
-
+  </div>
+  <a routerLink="/report">
+<footer>
+  <div class="report-encounter-link">
+     <button type="button"><h2 class="hencounters">Report Encounter</h2></button>
+  </div>
+</footer></a>
 
 </div>

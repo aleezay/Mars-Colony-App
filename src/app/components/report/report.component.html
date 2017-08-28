@@ -1,13 +1,20 @@
-<div class="page">
-  <form [formGroup]="reportForm" novalidate (submit)="submitReport()">
+<div class="report-page">
+  <div class="report-title">
+    <h2>Report Encoounter</h2>
+    <p>Safety on Mars is Your Responsibility</p>
+  </div>
+  <div class="report-pic"></div>
+  <section class="section">
+  <form [formGroup]="reportForm" novalidate (submit)="submitReport()" class="report-form">
     <select formControlName="alien_id">
         <option value="">Select an Alien</option>
         <option *ngFor="let alien of aliens" value="{{ alien.type }}">{{alien.type}}</option>
    </select>
     <textarea formControlName="action">What happened? What did the aliens do to you?</textarea>
 
-    <button type="submit">Report Encounter</button>
+    <button type="submit" routerLink="/encounters"><h3>Report Encounter</h3></button>
     
-<!--routerLink="/encounters"-->
+
   </form>
+  </section>
 </div>

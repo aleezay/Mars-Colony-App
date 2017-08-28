@@ -5,7 +5,7 @@ import { Report } from '../../models/report';
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
-  styles: [],
+  styleUrls: ['./encounters.component.scss'],
   providers: [
     ReportService
   ]

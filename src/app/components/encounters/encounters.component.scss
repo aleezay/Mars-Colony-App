@@ -1,0 +1,51 @@
+// .encounters-page{}
+.encounters-title {
+    padding:1.5rem;
+    margin-top: 1.2rem; 
+}
+
+.encounters-container {
+    flex: 1;
+    // padding: 0 1rem 2rem;
+    padding:1rem;
+    overflow: scroll;
+    height: 65vh;
+    margin:1.2rem;
+}
+
+.encounters-list {
+    list-style: none;
+    // text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size:1rem;
+    line-height: 1rem;
+    .encounters-li{
+        padding:.8rem;
+    }
+}
+
+button {
+    align-content: center;
+    text-align: center;
+    margin-top: 3.2rem;
+    margin-left: 2rem;
+    padding: .5rem;
+    width: 85%;
+    background: transparent;
+    border: none;
+}
+.hencounters{
+  color: #302a28;
+}
+
+footer {
+    background-image: url("../../assets/images/mars-bg02.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 130px;
+    // background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}

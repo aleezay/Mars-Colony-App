@@ -1,15 +1,51 @@
-<div class="page">
-    <form [formGroup]="registerForm" novalidate (ngSubmit)="registerColonist()">
-     <input type="text" placeholder="Name" formControlName="name" />
-     <input type="number" placeholder="Age" formControlName="age" />
-     <select formControlName="job_id">
+<div class="register-page">
+
+  <div class="title">
+    <title></title>
+    <h3>Register to Become an Elon</h3>
+  </div>
+
+  <section class="form">
+      <!--<div class="flex-diection-column">-->
+    <form [formGroup]="registerForm" novalidate (ngSubmit)="registerColonist()" class="registration-form">
+      <input type="text" placeholder="Name" formControlName="name" />
+      <input type="number" placeholder="Age" formControlName="age" />
+      <select formControlName="job_id" class="select-job">
         <option value="">Select a Job</option>
-        <option *ngFor="let job of jobs" value="{{ job.id }}">{{job.name}}</option>
-   </select>
-   <button [disabled]="registerForm.status === 'INVALID'" type="submit">Register</button>
-</form>
-<!--{{  registerForm.value | json }}
-{{ registerForm.status | json }}-->
+        <option *ngFor="let job of jobs" value="{{ job.id }}">{{job.name}} </option>
+   </select>  
+   
+      <a routerLink="/encounters">
+   <button [disabled]="registerForm.status === 'INVALID'" type="submit">One of Us!</button> </a>
+    
+      {{  registerForm.value | json }}
+          {{ registerForm.status | json }}
+        
+    </form>
+    <!--</div>-->
+<div class="mars-window"></div>
+  </section>
+  <!--registration-container-->
+
+ 
 </div>
+<!--page-->
 
 
+<!--
+   <div class="terms">
+    <h3>Terms and Conditions</h3>
+    <ul class= "rules">
+        <li>Colonists may only use the title Elon; 
+            Eg: Elon;Marvin />
+        <li>Colonists must accept Elon;Elon Musk as their Ruler</li>
+        <li>Colonists may only eat MarsBars</li>
+    </ul>-->
+<!--<form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } 
+else { alert('Please indicate that you will conform to our Demands'); return false; }">
+
+<input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions
+<input type="submit" name="submit" value="submit" />
+</form>
+
+</div>-->
