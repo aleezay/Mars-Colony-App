@@ -5,16 +5,21 @@
     // padding:1rem;
 }
 .report-pic{
-     background-image: url("../../assets/images/report.jpg");
+    background-image: url("../../assets/images/report.jpg");
     background-size: cover;
     width: 100vw;
     height: 130px;
     position:absolute;
-     transform: rotate(-180deg);
-     padding-top:35rem;
-}
+    transform: rotate(-180deg);
+    padding-top:35rem;
+      @media only screen and (min-width: 1000px) {
+         width: 100vw;
+         height: 600px;
+         align-self: center;
+}}
 .report-title{
-    padding:2rem;
+    padding-top:3.5rem;
+     font-size: 1.5rem;
 }
 .report-form {
     display: flex;
@@ -48,15 +53,10 @@ textarea{
     width: 85%;
     height: 25vh;
     align-self: center;
-}
-.report-pic{
-     background-image: url("../../assets/images/report.jpg");
-    background-size: cover;
-    width: 100vw;
-    height: 130px;
+     border: 4px solid #B22222;
 }
 
 p{
     padding-top:1rem;
-    font-size: .8rem;
+    font-size: 1rem;
 }
